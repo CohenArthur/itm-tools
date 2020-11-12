@@ -24,6 +24,34 @@ packets, all intermixed, then these tools won't work for you. In practice,
 though, it's likely that you'll only trace one aspect at a time due to the
 bandwidth limit of the ITM output.
 
+## Installation
+
+### From release
+
+If you don't want to compile the project or install Rust altogether, feel free
+to download the [latest release](https://github.com/CohenArthur/itm-tools/releases).
+
+Download the different files, mark them as executable with `chmod +x <file>` and then
+move them to any directory in your path, for example `/usr/bin/`.
+
+```sh
+> ls Download
+excevt pcsampl
+> chmod +x Download/pcsampl
+> sudo mv Download/pcsampl /usr/bin
+> pcsampl # Works
+```
+
+### From source
+
+You need to have a valid rust toolchain installed. If you don't know how to get one,
+head over to [the rust website](https://www.rust-lang.org/). Once that is installed,
+simply run the following command to install `itm-tools` on your system:
+
+```sh
+> cargo install --git https://github.com/cohenarthur/itm-tools
+```
+
 ## Exception tracing
 
 The ITM can generate an exception trace packet any time the processor enters,
